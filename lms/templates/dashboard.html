@@ -149,12 +149,13 @@ import json
 
 <section class="container dashboard" id="dashboard-main">
   <section class="my-courses" id="my-courses" role="main" aria-label="Content">
+
+    % if settings.FEATURES.get('ENABLE_TABBED_DASHBOARD'):
+    <section class="wrapper-header-courses"></section>
+    % else:
     <header class="wrapper-header-courses">
       <h2 class="header-courses">${_("My Courses")}</h2>
     </header>
-
-    % if settings.FEATURES.get('ENABLE_TABBED_DASHBOARD'):
-    <section id="wrapper-course-tabs"></section>
     % endif
 
     % if staff_access and len(errored_courses) > 0:

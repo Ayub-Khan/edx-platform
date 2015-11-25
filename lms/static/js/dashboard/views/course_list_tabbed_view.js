@@ -9,17 +9,17 @@
 
         var CourseListTabbedView = Backbone.View.extend({
 
-            el: '#wrapper-course-tabs',
+            el: '.wrapper-header-courses',
 
             courses: {
                 active: {
-                    title: gettext('Active'),
+                    title: gettext('Current'),
                     template: '#active-courses-tpl',
                     url: '/active-courses',
                     index: 0
                 },
                 completed: {
-                    title: gettext('Completed'),
+                    title: gettext('Archived'),
                     template: '#completed-courses-tpl',
                     url: '/completed-courses',
                     index: 1
